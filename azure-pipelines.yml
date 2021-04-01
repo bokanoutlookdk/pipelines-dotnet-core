@@ -32,7 +32,7 @@ steps:
   inputs:
     command: 'test'
     projects: '*Test*/*.csproj'
-    arguments: '--configuration $(buildConfiguration) --collect:"XPlat Code Coverage" -- RunConfiguration.DisableAppDomain=true'
+    arguments: '--configuration $(buildConfiguration)'
     testRunTitle: 'test - bo'
   
 

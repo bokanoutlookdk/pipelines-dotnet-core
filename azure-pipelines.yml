@@ -33,6 +33,7 @@ steps:
     command: 'test'
     projects: '*Test*/*.csproj'
     arguments: '--configuration $(buildConfiguration) --collect:"XPlat Code Coverage" -- RunConfiguration.DisableAppDomain=true'
+    testRunTitle: 'test - bo'
   
 
 - task: PublishTestResults@2
@@ -41,10 +42,4 @@ steps:
     testResultsFiles: '**/*.trx'
     failTaskOnFailedTests: true
 
-- task: PublishCodeCoverageResults@1
-  inputs:
-    codeCoverageTool: 'cobertura'
-    summaryFileLocation: $(Build.SourcesDirectory)/TestResults/Coverage/**/coverage.cobertura.xml
-    reportDirectory: $(Build.SourcesDirectory)/TestResults/Coverage/Reports
-    failIfCoverageEmpty: false 
-    additionalCodeCoverageFiles: 
+
